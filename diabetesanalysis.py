@@ -10,7 +10,8 @@ import seaborn as sns
 
 df = pd.read_csv("diabetes.csv")
 st.write(df.head())
-st.write(df.tail())
+st.write(df.tail(10))
+
 
 #import -m pip install scikit-learn
 #import -m pip install matlib
