@@ -10,6 +10,7 @@ import seaborn as sns
 
 df = pd.read_csv("diabetes.csv")
 st.write(df.head())
+st.markdown('# Last five Arguments')
 st.write(df.tail(10))
 
 
