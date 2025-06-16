@@ -17,10 +17,11 @@ st.markdown('# Last Ten Items')
 st.write(df.tail(10))
 
 st.title("General Information About Diabetes Analysis")
-hall = df.describe()
+hall = df.describe
 st.write(hall)
 
-st.title('Blood Pressure')
+
+st.title('Blood Pressure Chart')
 counted = df["BloodPressure"].value_counts().reset_index()
 counted.columns = ["BloodPressure", "count"] 
 BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Cleansheets")
