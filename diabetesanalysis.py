@@ -37,7 +37,7 @@ st.table(BloodPressure)
 st.markdown("### Body Mass Index")
 df = pd.read_csv("diabetes.csv")
 BMI = df["BMI"].describe()
-st.table(BMI)
+st.write(BMI)
 
 
 
