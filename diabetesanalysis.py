@@ -34,6 +34,12 @@ BloodPressure = df["BloodPressure"].describe()
 st.table(BloodPressure)
 
 
+st.markdown("### Body Mass Index")
+df = pd.read_csv("diabetes.csv")
+BMI = df["BMI"].describe()
+st.table(BMI)
+
+
 
 st.markdown("## Chart Representation")
 BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
