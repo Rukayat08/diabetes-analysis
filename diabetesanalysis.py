@@ -9,9 +9,9 @@ import seaborn as sns
 #convert file to dataframe
 
 df = pd.read_csv("diabetes.csv")
-st.markdown("# First Five Arguments")
+st.markdown("# First Five Items")
 st.write(df.head())
-st.markdown('# Last five Arguments')
+st.markdown('# Last Ten Items')
 st.write(df.tail(10))
 
 st.title('Blood Pressure Chart')
