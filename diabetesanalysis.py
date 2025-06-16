@@ -22,7 +22,7 @@ hall = df.describe
 st.write(hall)
 
 st.markdown("### OVERVIEW")
-summary = df.shape
+summary = df.shape()
 st.table(summary)
 
 st.title('Blood Pressure Chart')
