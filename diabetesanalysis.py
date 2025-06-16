@@ -23,7 +23,7 @@ st.write(hall)
 
 st.markdown("### OVERVIEW")
 summary = df.shape
-st.table(summary)
+st.write(summary)
 
 st.title('Blood Pressure Chart')
 counted = df["BloodPressure"].value_counts().reset_index()
