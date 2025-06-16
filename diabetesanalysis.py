@@ -41,7 +41,7 @@ st.write(df["BMI"].describe())
 
 st.markdown("### Glucose")
 df = pd.read_csv("diabetes.csv")
-Glucose  = df["Glucose"].describe()
+Glucose = df["Glucose"].describe()
 st.write(df["Glucose"].describe())
 
 BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
