@@ -14,6 +14,11 @@ st.write(df.head())
 st.markdown('# Last five Arguments')
 st.write(df.tail(10))
 
+st.title('Blood Pressure Chart')
+counted = df["BloodPressure"].value_counts().reset_index()
+counted.columns = ["BloodPressure", "count"] 
+BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Cleansheets")
+st.plotly_chart(BloodPressure, use_container_width = True)
 
 #import -m pip install scikit-learn
 #import -m pip install matlib
