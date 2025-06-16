@@ -39,10 +39,17 @@ df = pd.read_csv("diabetes.csv")
 Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
-st.markdown("### Glucose")
+st.markdown("### Body Mass Index")
 df = pd.read_csv("diabetes.csv")
-Glucose = df["Glucose"].describe()
-st.write(df["Glucose"].describe())
+Body_Mass_Index = df["BMI"].describe()
+st.write(df["BMI"].describe())
+
+
+
+st.markdown("### Skin Thickness")
+df = pd.read_csv("diabetes.csv")
+Skin = df["SkinThickness"].describe()
+st.write(df["Skin"].describe())
 
 BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP, use_container_width = True)
