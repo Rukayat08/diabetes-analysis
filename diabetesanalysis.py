@@ -3,6 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as pt 
 import numpy as np 
 import seaborn as sns
+import plotly as px
 
 #read a csv file
 #import csv file
@@ -24,6 +25,12 @@ st.write(hall)
 st.markdown("### OVERVIEW")
 summary = df.shape
 st.write(summary)
+
+st.markdown("## Chart Representation")
+BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
+st.plotly_char(BP, use_container_width = True)
+
+
 
 st.title('Blood Pressure Chart')
 counted = df["BloodPressure"].value_counts().reset_index()
