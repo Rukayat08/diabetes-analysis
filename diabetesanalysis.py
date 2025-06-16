@@ -8,13 +8,19 @@ import seaborn as sns
 #import csv file
 #convert file to dataframe
 
+
 df = pd.read_csv("diabetes.csv")
 st.markdown("# First Five Items")
 st.write(df.head())
+
 st.markdown('# Last Ten Items')
 st.write(df.tail(10))
 
-st.title('Blood Pressure Chart')
+st.title("General Information About Diabetes Analysis")
+hall = df.describe()
+st.write(hall)
+
+st.title('Blood Pressure')
 counted = df["BloodPressure"].value_counts().reset_index()
 counted.columns = ["BloodPressure", "count"] 
 BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Cleansheets")
