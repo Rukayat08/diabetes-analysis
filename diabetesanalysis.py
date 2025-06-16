@@ -36,7 +36,7 @@ st.table(BloodPressure)
 
 st.markdown("### Body Mass Index")
 df = pd.read_csv("diabetes.csv")
-Body Mass Index = df["BMI"].describe()
+Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
 BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
