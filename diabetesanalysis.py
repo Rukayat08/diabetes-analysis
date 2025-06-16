@@ -26,6 +26,13 @@ st.markdown("### OVERVIEW")
 summary = df.shape
 st.write(summary)
 
+#Univariate Analysis
+st.markdown("## Univariate Analysis")
+st.markdown("### Blood Pressure")
+df = pd.read_csv("diabetes.csv")
+BloodPressure = df["BloodPressure"].describe()
+st.write(BloodPressure)
+
 st.markdown("## Chart Representation")
 BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
 st.plotly_chart(BP, use_container_width = True)
@@ -38,12 +45,7 @@ counted.columns = ["BloodPressure", "count"]
 BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Cleansheets")
 st.plotly_chart(BloodPressure, use_container_width = True)
 
-#Univariate Analysis
-st.markdown("## Univariate Analysis")
-st.markdown("### Blood Pressure")
-df = pd.read_csv("diabetes.csv")
-BloodPressure = df["BloodPressure"].describe()
-st.write(BloodPressure)
+
 
 
 #import -m pip install scikit-learn
