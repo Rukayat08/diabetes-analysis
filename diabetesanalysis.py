@@ -31,7 +31,9 @@ st.markdown("## Univariate Analysis")
 st.markdown("### Blood Pressure")
 df = pd.read_csv("diabetes.csv")
 BloodPressure = df["BloodPressure"].describe()
-st.write(BloodPressure)
+st.table(BloodPressure)
+
+
 
 st.markdown("## Chart Representation")
 BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
