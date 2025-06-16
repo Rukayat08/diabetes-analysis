@@ -3,7 +3,7 @@ import streamlit as st
 import matplotlib.pyplot as pt 
 import numpy as np 
 import seaborn as sns
-import plotly as px
+import plotly.express as px
 
 #read a csv file
 #import csv file
@@ -14,13 +14,13 @@ df = pd.read_csv("diabetes.csv")
 st.markdown("# First Five Items")
 st.write(df.head())
 
-st.markdown('# Last Ten Items')
-st.write(df.tail(10))
+st.markdown('# Last Five Items')
+st.write(df.tail(5))
 
 st.title("General Information About Diabetes Analysis")
 st.markdown('# Overview')
-hall = df.describe
-st.write(hall)
+Preview = df.describe
+st.write(Preview)
 
 st.markdown("### OVERVIEW")
 summary = df.shape
@@ -37,8 +37,12 @@ st.table(BloodPressure)
 st.markdown("### Body Mass Index")
 df = pd.read_csv("diabetes.csv")
 Body Mass Index = df["BMI"].describe()
-st.table(Body Mass Index)
+st.write(df["BMI"].describe())
 
+BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
+st.plotly_chart(BP, use_container_width = True)
+pandas.DF
+pd.df([BloodPressure], df[Pregnancies])
 
 
 st.markdown("## Chart Representation")
@@ -50,7 +54,7 @@ st.plotly_chart(BP, use_container_width = True)
 st.title('Blood Pressure Chart')
 counted = df["BloodPressure"].value_counts().reset_index()
 counted.columns = ["BloodPressure", "count"] 
-BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Cleansheets")
+BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Pregnancies")
 st.plotly_chart(BloodPressure, use_container_width = True)
 
 
