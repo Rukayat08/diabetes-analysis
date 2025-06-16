@@ -28,7 +28,7 @@ st.write(summary)
 
 st.markdown("## Chart Representation")
 BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
-st.plotly_char(BP, use_container_width = True)
+st.plotly_chart(BP, use_container_width = True)
 
 
 
