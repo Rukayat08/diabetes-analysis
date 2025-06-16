@@ -11,10 +11,10 @@ import plotly.express as px
 
 
 df = pd.read_csv("diabetes.csv")
-st.markdown("# First Five Items")
+st.markdown("# First Five Observation")
 st.write(df.head())
 
-st.markdown('# Last Five Items')
+st.markdown('# Last Five Observation')
 st.write(df.tail(5))
 
 st.title("General Information About Diabetes Analysis")
