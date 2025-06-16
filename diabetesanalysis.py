@@ -39,14 +39,19 @@ df = pd.read_csv("diabetes.csv")
 Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
-BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
+st.markdown("### Glucose")
+df = pd.read_csv("diabetes.csv")
+Glucose  = df["Glucose"].describe()
+st.write(df["Glucose"].describe())
+
+BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP, use_container_width = True)
 pandas.DF
 pd.df([BloodPressure], df[Pregnancies])
 
 
 st.markdown("## Chart Representation")
-BP = px.bar(df["BloodPressure"], y = "BloodPressure", title = "index")
+BP = px.bar(df["BloodPressure"], x = "BloodPressure", title = "index")
 st.plotly_chart(BP, use_container_width = True)
 
 
