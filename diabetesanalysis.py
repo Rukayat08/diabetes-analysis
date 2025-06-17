@@ -5,7 +5,7 @@ import numpy as np
 import seaborn as sns
 import plotly.express as px
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import logisticRegression
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 
@@ -76,9 +76,11 @@ X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2)
 model = LogisticRegression()
 model.fit(X_train,Y_train) #training the model
 
+st.markdown("## Outcome Prediction")
 prediction = model.predict(X_test)
 st.write(prediction)
 
+st.markdown("## Model Evaluation")
 
 #import -m pip install scikit-learn
 #import -m pip install matlib
