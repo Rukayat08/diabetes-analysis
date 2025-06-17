@@ -4,7 +4,14 @@ import matplotlib.pyplot as pt
 import numpy as np 
 import seaborn as sns
 import plotly.express as px
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import logisticRegression
+from sklearn.metrics import accuracy_score
 
+
+
+#pandas is used for data analysis
+#scikitlearn is used for predictive analysis.
 #read a csv file
 #import csv file
 #convert file to dataframe
@@ -45,7 +52,7 @@ Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
 
-
+'''
 st.markdown("### Skin Thickness")
 df = pd.read_csv("diabetes.csv")
 Skin = df["SkinThickness"].describe()
@@ -55,27 +62,22 @@ BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distributio
 st.plotly_chart(BP, use_container_width = True)
 
 pd.df([BloodPressure], df[Pregnancies])
-
+'''
 
 st.markdown("## Correlation")
 correlation = df.corr()
 st.write(correlation)
 
-'''
-st.markdown("## Chart Representation")
-BP = px.bar(df["BloodPressure"], x = "BloodPressure", title = "index")
-st.plotly_chart(BP, use_container_width = True)
-'''
+st.markdown("## Predictive Analysis")
+X = df.drop("Outcome", axis=1)
+Y = df["Outcome"]
+X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2)
 
+model = LogisticRegression()
+model.fit(X_train,Y_train) #training the model
 
-'''
-st.title('Blood Pressure Chart')
-counted = df["BloodPressure"].value_counts().reset_index()
-counted.columns = ["BloodPressure", "count"] 
-BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Pregnancies")
-st.plotly_chart(BloodPressure, use_container_width = True)
-'''
-
+prediction = model.predict(X_test)
+st.write(prediction)
 
 
 #import -m pip install scikit-learn
