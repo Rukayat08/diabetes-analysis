@@ -56,11 +56,14 @@ df = pd.read_csv("diabetes.csv")
 Skin = df["SkinThickness"].describe()
 st.write(df["SkinThickness"].describe())
 
-BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
+BP = px.histogram(df["BloodPressure"], x = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP, use_container_width = True)
 
 BP2 = px.bar(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP2, use_container_width = True)
+
+Preggy = px.bar(df["Pregnancies"], y = "Pregnancies", title = "Distribution of Pregnancies")
+st.plotly_chart(Preggy, use_container_width = True)
 
 st.markdown("Bivariate Analysis")
 st.markdown("## BloodPressure vs Pregnancies Description")
