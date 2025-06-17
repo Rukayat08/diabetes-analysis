@@ -46,10 +46,10 @@ df = pd.read_csv("diabetes.csv")
 Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
-st.markdown("### Body Mass Index")
+st.markdown("### Pregnancies")
 df = pd.read_csv("diabetes.csv")
-Body_Mass_Index = df["BMI"].describe()
-st.write(df["BMI"].describe())
+Pregnancies = df["Pregnancies"].describe()
+st.write(df["Pregnancies"].describe())
 
 st.markdown("### Skin Thickness")
 df = pd.read_csv("diabetes.csv")
