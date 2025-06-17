@@ -81,6 +81,8 @@ prediction = model.predict(X_test)
 st.write(prediction)
 
 st.markdown("## Model Evaluation")
+accuracy = accuracy_score(prediction, Y_test)
+st.write(accuracy)
 
 #import -m pip install scikit-learn
 #import -m pip install matlib
