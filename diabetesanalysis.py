@@ -68,7 +68,6 @@ df2 = pd.DataFrame(df["BloodPressure"], df["Pregnancies"])
 st.write(df2)
 
 
-
 st.markdown("## Correlation")
 correlation = df.corr()
 st.write(correlation)
