@@ -67,6 +67,14 @@ st.markdown("## BloodPressure vs Pregnancies Description")
 df2 = pd.DataFrame(df["BloodPressure"], df["Pregnancies"])
 st.write(df2)
 
+st.markdown("## BloodPressure vs BMI")
+df3 = pd.DataFrame(df["BloodPressure"], df["BMI"])
+st.write(df3)
+
+st.markdown("## Pregnancies vs Age")
+df4 = pd.DataFrame(df["Pregnancies"], df["Age"])
+st.write(df4)
+
 
 st.markdown("## Correlation")
 correlation = df.corr()
