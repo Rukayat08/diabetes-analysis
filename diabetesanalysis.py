@@ -51,18 +51,23 @@ df = pd.read_csv("diabetes.csv")
 Body_Mass_Index = df["BMI"].describe()
 st.write(df["BMI"].describe())
 
-
-'''
 st.markdown("### Skin Thickness")
 df = pd.read_csv("diabetes.csv")
 Skin = df["SkinThickness"].describe()
-st.write(df["Skin"].describe())
+st.write(df["SkinThickness"].describe())
 
 BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP, use_container_width = True)
 
-pd.df([BloodPressure], df[Pregnancies])
-'''
+BP2 = px.bar(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
+st.plotly_chart(BP2, use_container_width = True)
+
+st.markdown("Bivariate Analysis")
+st.markdown("## BloodPressure vs Pregnancies Description")
+df2 = pd.DataFrame(df["BloodPressure"], df["Pregnancies"])
+st.write(df2)
+
+
 
 st.markdown("## Correlation")
 correlation = df.corr()
@@ -72,6 +77,7 @@ st.markdown("## Predictive Analysis")
 X = df.drop("Outcome", axis=1)
 Y = df["Outcome"]
 X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2)
+
 
 model = LogisticRegression()
 model.fit(X_train,Y_train) #training the model
