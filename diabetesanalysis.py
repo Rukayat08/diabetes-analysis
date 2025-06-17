@@ -53,22 +53,28 @@ st.write(df["Skin"].describe())
 
 BP = px.histogram(df["BloodPressure"], y = "BloodPressure", title = "Distribution of Blood Pressure")
 st.plotly_chart(BP, use_container_width = True)
-pandas.DF
+
 pd.df([BloodPressure], df[Pregnancies])
 
 
+st.markdown("## Correlation")
+correlation = df.corr()
+st.write(correlation)
+
+'''
 st.markdown("## Chart Representation")
 BP = px.bar(df["BloodPressure"], x = "BloodPressure", title = "index")
 st.plotly_chart(BP, use_container_width = True)
+'''
 
 
-
+'''
 st.title('Blood Pressure Chart')
 counted = df["BloodPressure"].value_counts().reset_index()
 counted.columns = ["BloodPressure", "count"] 
 BloodPressure = px.pie(counted, names = "BloodPressure", values = "count", title = "Pregnancies")
 st.plotly_chart(BloodPressure, use_container_width = True)
-
+'''
 
 
 
